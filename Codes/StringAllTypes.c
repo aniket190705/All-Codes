@@ -6,7 +6,7 @@ int main()
     char arr1[] = {'a', 'b', 'c'};
     for (int i = 0; i < 3; i++)
     {
-        printf("%c", arr1[i]);   //arr1[i] is also a pointer. It returns memory location
+        printf("%c", arr1[i]); // arr1[i] is not a pointer!
     }
     printf("\n");
     for (int i = 0; i < 3; i++)
@@ -21,12 +21,14 @@ int main()
     char arr2[] = {"abcde"}; // arr2[] = {"abcd"} ===> arr2[] = {'a','b','c','d'}
     for (int i = 0; i < sizeof(arr2); i++)
     {
-        printf("%c", arr2[i]);   //arr2[] is like a pointer here too. It returns memory location
+        printf("%c", arr2[i]); // arr2[i] is not a pointer
     }
-    printf("\n%s", arr2); //'arr2' here is like pointer
+    printf("\n%s", arr2); //'arr2' here is like pointer to the first element
 
-    char arr3[] = "abcdef"; // arr3[] = "abcd" ===> arr3[] = {'a','b','c','d'}
-    printf("\n%s", arr3);   //'arr3' here is like pointer for the first element
+    char arr3[] = "abcdef";   // arr3[] = "abcd" ===> arr3[] = {'a','b','c','d'}
+    printf("\n%s", arr3);     //'arr3' here is like pointer for the first element. Tells the memory location of the first element.
+    printf("\n%s", &arr3[1]); //'&arr3[1]' tells the memory location of the 2nd element.
+    printf("\n%s", &arr3[2]); //'&arr3[2]' tells the memory location of the 3rd element.
     printf("\n");
     for (int i = 0; i < sizeof(arr3); i++)
     {
